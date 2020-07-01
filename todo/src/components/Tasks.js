@@ -1,10 +1,10 @@
 import React from 'react'
 
-export default class NotFound extends React.Component {
+export default class Tasks extends React.Component {
     render() {
         return(
             <div>
-                NOtFOund
+                Tasks
             </div>
         )
     }

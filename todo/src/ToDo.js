@@ -4,6 +4,7 @@ import ListHome from './components/ListHome'
 import AddTask from './components/AddTask'
 import DevInfo from './components/DevInfo'
 import NotFound from './components/NotFound'
+import Tasks from './components/Tasks'
 
 export default class ToDo extends React.Component {
     render() {
@@ -11,6 +12,7 @@ export default class ToDo extends React.Component {
             <BrowserRouter>
                 <Switch>
                     <Route exact path="/home" component={ ListHome }/>
+                    <Route exact path="/home/tasks" component={ Tasks }/>
                     <Route exact path="/home/add" component={ AddTask }/>
                     <Route exact path="/home/dev" component={ DevInfo }/>
                     <Route component={ NotFound }/>

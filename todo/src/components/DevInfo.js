@@ -4,7 +4,7 @@ export default class DevInfo extends React.Component {
     render() {
         return(
             <div>
-                DevInfo
+                Iconos diseñados por <a href="https://www.flaticon.es/autores/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.es/" title="Flaticon"> www.flaticon.es</a>
             </div>
         )
     }
