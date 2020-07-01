@@ -4,6 +4,7 @@ import iconNav from '../img/tareas.svg'
 import './styles/NavBar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStackOverflow } from "@fortawesome/free-brands-svg-icons"
+import { faCalendarPlus, faLaptopCode, faAddressBook } from '@fortawesome/free-solid-svg-icons'
 
 export default class NavBar extends React.Component {
     render() {
@@ -15,15 +16,14 @@ export default class NavBar extends React.Component {
                 </Link>                
                 <div className="collapse navbar-collapse" id="navbarCollapse">
                     <ul className="navbar-nav mr-auto">
-                        <div><i className="fab fa-stack-overflow"></i></div>
                         <li className="nav-item">   
-                            <Link className="nav-link" to="/home/tasks"><FontAwesomeIcon icon={faStackOverflow} /> Mis tareas</Link>
+                            <Link className="nav-link" to="/home/tasks"><FontAwesomeIcon icon={ faAddressBook } /> Mis tareas</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/home/dev">Crear Tarea</Link>
+                            <Link className="nav-link" to="/home/dev"><FontAwesomeIcon icon={ faCalendarPlus } /> Crear Tarea</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/home/dev">Desarrollador</Link>
+                            <Link className="nav-link" to="/home/dev"><FontAwesomeIcon icon={ faLaptopCode } /> Desarrollador</Link>
                         </li>
                     </ul>
                 </div>            
