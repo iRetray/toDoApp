@@ -5,8 +5,11 @@ import { faCheckCircle, faSkull } from '@fortawesome/free-solid-svg-icons'
 
 export default class Task extends React.Component {
 
-    state = {
-        done: false
+    constructor() {
+        super()
+        this.state = {
+            done: false
+        }
     }
 
     cambiarEstado() {
@@ -19,14 +22,14 @@ export default class Task extends React.Component {
                 <Toast>
                     <ToastHeader>
                         { this.state.done 
-                            ? <i>Titulo de la tarea</i>
-                            : <strong>Titulo de la tarea</strong>
+                            ? <i>{this.props.tittle}</i>
+                            : <strong>{this.props.tittle}</strong>
                         }
                     </ToastHeader>
                     <ToastBody>
                         { this.state.done 
-                            ? <strike>Contenido de la tarea, aquí puede ir la descripción de la tarea de la persona, incluyendo un boton pequeño para dejar la tarea "terminada"</strike>
-                            : <p>Contenido de la tarea, aquí puede ir la descripción de la tarea de la persona, incluyendo un boton pequeño para dejar la tarea "terminada"</p>
+                            ? <strike>{this.props.description}</strike>
+                            : <p>{this.props.description}</p>
                         }
                     <ToastBody>
                         { this.state.done 
