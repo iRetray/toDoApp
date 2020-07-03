@@ -1,14 +1,14 @@
 [
     {
         "id": 0,
-        "tittle": "Titulo1",
-        "description": "Descripcion1",
-        "done": false
+        "tittle": "Leer un libro",
+        "description": "Leer no es cómodo cuando se lee para hacernos preguntas, no para responderlas. Las lecturas más provechosas son aquellas que nos estremecen, inquietan y dan la vuelta a las ideas o creencias que más arraigadas están en nuestro ser.",
+        "done": true
     },
     {
         "id": 1,
-        "tittle": "Titulo2",
-        "description": "Descripcion2",
-        "done": true
+        "tittle": "Hacer ejercicio",
+        "description": "El ejercicio físico hace que el cuerpo genere sustancias químicas que pueden ayudar a una persona a sentirse bien. El ejercicio físico puede ayudar a las personas a dormir mejor.",
+        "done": false
     }
 ]

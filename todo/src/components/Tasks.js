@@ -2,18 +2,20 @@ import React from 'react'
 import NavBar from './NavBar'
 import Task from './Task'
 import data from '../data.json'
-console.log(data);
-
 
 export default class Tasks extends React.Component {
 
     constructor() {
         super()
         this.state = {
-            tittle: 'Tittle',
-            description: 'Description'
+            dataList: []
         }
-    }    
+        this.obtenerDatos()
+    }
+    
+    obtenerDatos() {
+        this.dataList = data;
+    }
 
     render() {
         return(
@@ -21,10 +23,11 @@ export default class Tasks extends React.Component {
                 <NavBar />
                 <div className="container">
                     <div className="row">
-                        <div className="col-4">
-                        <h1>{this.state.name}</h1>
-                        <Task tittle={this.state.tittle} description={this.state.description} done={true}/>
-                        </div>                   
+                        {this.dataList.map(e =>
+                            <div className="col-4" key={e.id}>
+                                <Task tittle={e.tittle} description={e.description} done={e.done} />
+                            </div>
+                        )}                                        
                     </div>                    
                 </div> 
             </div>
