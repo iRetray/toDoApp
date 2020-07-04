@@ -4,21 +4,39 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlusSquare, faSpellCheck, faKeyboard } from '@fortawesome/free-solid-svg-icons'
 
 export default class FormNewTask extends React.Component{
+
+    state = {
+        tittle: "",
+        description: ""
+    }
+
+    onFormSubmit = (e) => {
+        e.preventDefault()
+        this.obtenerDatos()
+        console.log(this.state.value)
+        console.log(this.state.value)
+    }
+
+    obtenerDatos = (e) => {
+        this.setState({tittle: this.tittleInputValue.value})
+        this.setState({description: this.descriptionInputValue.value})
+    }
+
     render() {
         return(
             <div>
-                <Form>
+                <Form onSubmit={this.onFormSubmit}>
                     <h3>Creación de nueva tarea</h3>
                     <hr></hr>
                     <FormGroup>
                         <Label for="tittle"><FontAwesomeIcon icon={faSpellCheck}></FontAwesomeIcon><strong> Título de la tarea</strong></Label>
-                        <Input type="text" name="tittle" id="tittle" placeholder="Cocinar la cena para la cena familiar" />
+                        <Input innerRef={(node) => this.tittleInputValue = node} type="text" name="tittle" id="tittle" placeholder="Cocinar la comida para la cena familiar"/>
                     </FormGroup>
                     <FormGroup>
                         <Label for="description"><FontAwesomeIcon icon={faKeyboard}></FontAwesomeIcon><strong> Descripción de la tarea</strong></Label>
-                        <Input type="textarea" name="description" id="description" placeholder="Comprar vegetales y carne, arreglar la mesa y llamar a los invitados."/>
+                        <Input innerRef={(node) => this.descriptionInputValue = node} type="textarea" name="description" id="description" placeholder="Comprar vegetales y carne, arreglar la mesa y llamar a los invitados."/>
                     </FormGroup>
-                    <center><Button color="primary"><FontAwesomeIcon icon={faPlusSquare}></FontAwesomeIcon> Añadir tarea</Button></center>
+                    <center><Button color="primary" type="submit"><FontAwesomeIcon icon={faPlusSquare}></FontAwesomeIcon> Añadir tarea</Button></center>
                 </Form>
             </div>
         )
