@@ -9,13 +9,31 @@ export default class Tasks extends React.Component {
     constructor() {
         super()
         this.state = {
-            dataList: []
+            dataList: [],
+            postSimulados: []
         }
         this.obtenerDatos()
+    }
+
+    async componentDidMount() {
+        const respuestaPeticion = await fetch('https://jsonplaceholder.typicode.com/posts')
+        const datosEnJSON = await respuestaPeticion.json()
+        this.setState({postSimulados: datosEnJSON})
     }
     
     obtenerDatos() {
         this.dataList = data;
+    }
+
+    añadirTarea(tittle, description) {
+        const newTask = {
+            tittle: tittle,
+            description: description,
+            id: this.state.dataList.length
+        }
+        this.setState({
+            dataList: [...this.state.dataList, newTask]
+        })
     }
 
     render() {

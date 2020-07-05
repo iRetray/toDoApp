@@ -2,6 +2,8 @@ import React from 'react'
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlusSquare, faSpellCheck, faKeyboard } from '@fortawesome/free-solid-svg-icons'
+import data from '../data.json'
+import fs from 'fs'
 
 export default class FormNewTask extends React.Component{
 
@@ -13,8 +15,16 @@ export default class FormNewTask extends React.Component{
     onFormSubmit = (e) => {
         e.preventDefault()
         this.obtenerDatos()
-        console.log(this.state.value)
-        console.log(this.state.value)
+        console.log(data)
+        const newData = {
+            id: 15,
+            tittle: 'testTittle',
+            description: 'testDescription',
+            done: false
+        }
+        fs.WriteStream('../data.json', JSON.stringify(newData));
+        console.log(data)
+
     }
 
     obtenerDatos = (e) => {
