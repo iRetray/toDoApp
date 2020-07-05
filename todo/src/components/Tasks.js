@@ -2,6 +2,7 @@ import React from 'react'
 import NavBar from './NavBar'
 import Task from './Task'
 import AddButton from './AddButton'
+import { Jumbotron } from 'reactstrap'
 
 export default class Tasks extends React.Component {
 
@@ -72,7 +73,19 @@ export default class Tasks extends React.Component {
                                 <Task tittle={e.tittle} description={e.description} done={e.state} id={e.id} updateState={this.obtenerDatos}/>
                                 </center>
                             </div>
-                        )}                                        
+                        )}
+                        {
+                            this.state.dataList.length === 0
+                            ? <div className="col-lg-12 align-self-center">
+                                <center>
+                                    <Jumbotron>
+                                        <h1>No hay tareas</h1>
+                                        <p className="lead text-muted">Crea una tarea para empezar</p>
+                                    </Jumbotron>
+                                </center>
+                            </div>
+                            : <div></div>
+                        }                                       
                     </div>
                     <div>
                         <AddButton />
