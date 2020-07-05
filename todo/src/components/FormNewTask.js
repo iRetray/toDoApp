@@ -5,19 +5,22 @@ import { faPlusSquare, faSpellCheck, faKeyboard } from '@fortawesome/free-solid-
 
 export default class FormNewTask extends React.Component{
 
-    state = {
-        tittle: "",
-        description: ""
+    constructor(props) {
+        super(props);
+        this.state = {
+            tittle: "",
+            description: ""
+        }
+        this.tittleChange = this.tittleChange.bind(this);
+        this.descriptionChange = this.descriptionChange.bind(this);
     }
 
     onFormSubmit = (e) => {
         e.preventDefault()
-        this.obtenerDatos()
         this.añadirTarea(this.state.tittle, this.state.description)
     }
 
     añadirTarea(tittle, description) {
-        console.log(tittle, description)
         let dataList = localStorage.getItem("listaTareas")
         console.log(dataList)
         const newTask = {
@@ -33,9 +36,14 @@ export default class FormNewTask extends React.Component{
         console.log(JSON.parse(localStorage.getItem("listaTareas"))) */
     }
 
-    obtenerDatos = (e) => {
-        this.setState({tittle: this.tittleInputValue.value})
-        this.setState({description: this.descriptionInputValue.value})
+    tittleChange(event) {
+        this.setState({tittle: event.target.value});
+        this.props.actualizarTittle(this.state.tittle);
+    }
+
+    descriptionChange(event) {
+        this.setState({description: event.target.value});
+        this.props.actualizarDescription(this.state.description)
     }
 
     render() {
@@ -46,11 +54,11 @@ export default class FormNewTask extends React.Component{
                     <hr></hr>
                     <FormGroup>
                         <Label for="tittle"><FontAwesomeIcon icon={faSpellCheck}></FontAwesomeIcon><strong> Título de la tarea</strong></Label>
-                        <Input innerRef={(node) => this.tittleInputValue = node} type="text" name="tittle" id="tittle" placeholder="Cocinar la comida para la cena familiar"/>
+                        <Input type="text" name="tittle" id="tittle" placeholder="Cocinar la comida para la cena familiar" value={this.state.tittle} onChange={this.tittleChange}/>
                     </FormGroup>
                     <FormGroup>
                         <Label for="description"><FontAwesomeIcon icon={faKeyboard}></FontAwesomeIcon><strong> Descripción de la tarea</strong></Label>
-                        <Input innerRef={(node) => this.descriptionInputValue = node} type="textarea" name="description" id="description" placeholder="Comprar vegetales y carne, arreglar la mesa y llamar a los invitados."/>
+                        <Input type="textarea" value={this.state.description} onChange={this.descriptionChange} name="description" id="description" placeholder="Comprar vegetales y carne, arreglar la mesa y llamar a los invitados."/>
                     </FormGroup>
                     <center><Button color="primary" type="submit"><FontAwesomeIcon icon={faPlusSquare}></FontAwesomeIcon> Añadir tarea</Button></center>
                 </Form>
