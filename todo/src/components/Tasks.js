@@ -43,8 +43,10 @@ export default class Tasks extends React.Component {
                 <div className="container">
                     <div className="row">
                         {this.dataList.map(e =>
-                            <div className="col-4 align-self-center" key={e.id}>
+                            <div className="col-lg-4 align-self-center" key={e.id}>
+                                <center>
                                 <Task tittle={e.tittle} description={e.description} done={e.done} />
+                                </center>
                             </div>
                         )}                                        
                     </div>
