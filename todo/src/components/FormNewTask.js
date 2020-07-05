@@ -17,11 +17,16 @@ export default class FormNewTask extends React.Component{
         this.tittleChange = this.tittleChange.bind(this);
         this.descriptionChange = this.descriptionChange.bind(this);
         this.darAlerta = this.darAlerta.bind(this)
+        this.camposVacios = this.camposVacios.bind(this)
     }
 
     onFormSubmit = (e) => {
         e.preventDefault()
-        this.añadirTarea(this.state.tittle, this.state.description)
+        if(!this.state.tittle | !this.state.tittle){
+            this.camposVacios()
+        } else {
+            this.añadirTarea(this.state.tittle, this.state.description)
+        }        
     }
 
     añadirTarea(tittle, description) {
@@ -41,6 +46,16 @@ export default class FormNewTask extends React.Component{
             description: ""
         })
         this.darAlerta()
+    }
+
+    camposVacios() {
+        Swal.fire({
+            icon: 'error',
+            title: 'Upss',
+            text: 'Completa ambos campos antes de añadir una nueva tarea',
+            confirmButtonText:'Entiendo',
+            showCloseButton: true
+          })
     }
 
     darAlerta() {
