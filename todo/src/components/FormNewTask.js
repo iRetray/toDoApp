@@ -1,7 +1,7 @@
 import React from 'react'
 import { Form, FormGroup, Label, Input, Button  } from 'reactstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlusSquare, faSpellCheck, faKeyboard, faCalendarPlus } from '@fortawesome/free-solid-svg-icons'
+import { faPlusSquare, faSpellCheck, faKeyboard } from '@fortawesome/free-solid-svg-icons'
 import Swal from 'sweetalert2'
 import '@sweetalert2/themes/dark/dark.css'
 
@@ -53,9 +53,9 @@ export default class FormNewTask extends React.Component{
           })
     }
 
-    tittleChange(event) {
+    tittleChange(event) {     
         this.setState({tittle: event.target.value});
-        this.props.actualizarTittle(this.state.tittle);
+        this.props.actualizarTittle(this.state.tittle);      
     }
 
     descriptionChange(event) {

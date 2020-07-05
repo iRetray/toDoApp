@@ -5,6 +5,21 @@ import { faCheckCircle } from '@fortawesome/free-solid-svg-icons'
 
 export default class Task extends React.Component {
 
+    constructor(props) {
+        super(props)
+        this.state = {
+            tittle: "",
+            description: ""
+        }
+    }
+
+    componentWillReceiveProps() {
+        this.setState({
+            tittle: this.props.tittle,
+            description: this.props.description
+        })
+    }
+
     render() {
         return(
             <Jumbotron>
