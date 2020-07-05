@@ -24,7 +24,7 @@ const NavBarCollapse = (props) => {
         <NavbarBrand>
             <Link to="/home" className="text-white" style={{textDecoration: 'none'}}>
             <img src={iconNav} width="40" height="40" alt="" className="icon"/>
-                toDo 
+            {'   '}toDo 
             </Link>            
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
