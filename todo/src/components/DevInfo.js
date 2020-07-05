@@ -18,9 +18,11 @@ export default class DevInfo extends React.Component {
                             <p className="display-4">Retray</p>                            
                             <p className="lead">Desarrollador Web</p>
                             <hr></hr>
-                            <p className="lead text-muted"><FontAwesomeIcon icon={faGithubSquare}></FontAwesomeIcon> https://github.com/iRetray</p>
-                            <p className="lead text-muted"><FontAwesomeIcon icon={faFacebookSquare}></FontAwesomeIcon> https://www.facebook.com/JRetray/</p>
-                            <p className="lead text-muted"><FontAwesomeIcon icon={faInstagramSquare}></FontAwesomeIcon> https://www.instagram.com/le_retray/</p>
+                            <p className="lead text-muted">
+                                <FontAwesomeIcon icon={faGithubSquare}></FontAwesomeIcon> https://github.com/iRetray <br />
+                                <FontAwesomeIcon icon={faFacebookSquare}></FontAwesomeIcon> https://www.facebook.com/JRetray/ <br />
+                                <FontAwesomeIcon icon={faInstagramSquare}></FontAwesomeIcon> https://www.instagram.com/le_retray/
+                            </p>
                         </div>
                     </div>
                     <hr/>
