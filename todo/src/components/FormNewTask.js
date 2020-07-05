@@ -2,8 +2,6 @@ import React from 'react'
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlusSquare, faSpellCheck, faKeyboard } from '@fortawesome/free-solid-svg-icons'
-import data from '../data.json'
-import fs from 'fs'
 
 export default class FormNewTask extends React.Component{
 
@@ -15,16 +13,24 @@ export default class FormNewTask extends React.Component{
     onFormSubmit = (e) => {
         e.preventDefault()
         this.obtenerDatos()
-        console.log(data)
-        const newData = {
-            id: 15,
-            tittle: 'testTittle',
-            description: 'testDescription',
-            done: false
-        }
-        fs.WriteStream('../data.json', JSON.stringify(newData));
-        console.log(data)
+        this.añadirTarea(this.state.tittle, this.state.description)
+    }
 
+    añadirTarea(tittle, description) {
+        console.log(tittle, description)
+        let dataList = localStorage.getItem("listaTareas")
+        console.log(dataList)
+        const newTask = {
+            id: dataList.length,
+            tittle: tittle,
+            description: description,
+            state: 'pendiente'
+        }
+        /*
+        let newListTask = JSON.stringify(dataList.push(newTask))
+        localStorage.setItem("listaTareas", newListTask)
+        console.log("Tarea insertada")
+        console.log(JSON.parse(localStorage.getItem("listaTareas"))) */
     }
 
     obtenerDatos = (e) => {
