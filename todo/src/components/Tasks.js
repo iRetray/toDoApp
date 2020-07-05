@@ -1,5 +1,5 @@
 import React from 'react'
-import NavBar from './NavBar'
+import NavBarCollapse from './NavBarCollapse'
 import Task from './Task'
 import AddButton from './AddButton'
 import { Jumbotron } from 'reactstrap'
@@ -64,7 +64,7 @@ export default class Tasks extends React.Component {
     render() {
         return(
             <div>
-                <NavBar />
+                <NavBarCollapse />
                 <div className="container">
                     <div className="row">
                         {this.state.dataList.map(e =>

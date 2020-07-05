@@ -6,12 +6,7 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  NavbarText
+  NavLink
 } from 'reactstrap';
 import { Link } from 'react-router-dom'
 import iconNav from '../img/tareas.svg'
@@ -25,27 +20,29 @@ const NavBarCollapse = (props) => {
 
   return (
     <div>
-      <Navbar color="dark" light expand="md">
-        <NavbarBrand to="/home" className="text-white">
+      <Navbar className="navbar-dark bg-dark" light expand="md" style={{marginBottom: '20px'}}>
+        <NavbarBrand>
+            <Link to="/home" className="text-white" style={{textDecoration: 'none'}}>
             <img src={iconNav} width="40" height="40" alt="" className="icon"/>
                 toDo 
+            </Link>            
         </NavbarBrand>
-        <NavbarToggler color="light" onClick={toggle} />
+        <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
                 <NavLink>
-                    <Link to="/home/tasks" className="text-white"><FontAwesomeIcon icon={ faAddressBook } /> Mis tareas</Link>
+                    <Link to="/home/tasks" className="text-white" style={{textDecoration: 'none'}}><FontAwesomeIcon icon={ faAddressBook } /> Mis tareas</Link>
                 </NavLink>
             </NavItem>
             <NavItem>
                 <NavLink>
-                    <Link to="/home/add" className="text-white"><FontAwesomeIcon icon={ faCalendarPlus } /> Crear Tarea</Link>
+                    <Link to="/home/add" className="text-white" style={{textDecoration: 'none'}}><FontAwesomeIcon icon={ faCalendarPlus } /> Crear Tarea</Link>
                 </NavLink>
             </NavItem>
             <NavItem>
                 <NavLink>
-                    <Link to="/home/dev" className="text-white"><FontAwesomeIcon icon={ faLaptopCode } /> Desarrollador</Link>
+                    <Link to="/home/dev" className="text-white" style={{textDecoration: 'none'}}><FontAwesomeIcon icon={ faLaptopCode } /> Desarrollador</Link>
                 </NavLink>
             </NavItem>
           </Nav>

@@ -1,5 +1,5 @@
 import React from 'react'
-import NavBar from './NavBar'
+import NavBarCollapse from './NavBarCollapse'
 import FormNewTask from './FormNewTask'
 import PreviewNewTask from './PreviewNewTask'
 
@@ -29,18 +29,20 @@ export default class AddTask extends React.Component {
 
     render() {
         return(
-            <div className="container">
-                <NavBar /> 
-                <div className="row">
-                    <div className="col-sm-6">
-                        <br></br>
-                        <FormNewTask actualizarTittle={this.actualizarTittle} actualizarDescription={this.actualizarDescription}/>  
+            <div>
+                <NavBarCollapse /> 
+                    <div className="container">
+                    <div className="row">
+                        <div className="col-sm-6">
+                            <br></br>
+                            <FormNewTask actualizarTittle={this.actualizarTittle} actualizarDescription={this.actualizarDescription}/>  
+                        </div>
+                        <div className="col-sm-6">
+                            <br></br>
+                            <PreviewNewTask tittle={this.state.tittle} description={this.state.description}/> 
+                        </div>       
                     </div>
-                    <div className="col-sm-6">
-                        <br></br>
-                        <PreviewNewTask tittle={this.state.tittle} description={this.state.description}/> 
-                    </div>       
-                </div>
+                </div>                
             </div>
         )
     }

@@ -1,5 +1,5 @@
 import React from 'react'
-import NavBar from './NavBar'
+import NavBarCollapse from './NavBarCollapse'
 import nick from '../img/nickStyle.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithubSquare, faFacebookSquare, faInstagramSquare }  from '@fortawesome/free-brands-svg-icons'
@@ -8,7 +8,7 @@ export default class DevInfo extends React.Component {
     render() {
         return(
             <div>
-                <NavBar />
+                <NavBarCollapse />
                 <div className="container">
                     <div className="row">
                         <div className="col-3">
