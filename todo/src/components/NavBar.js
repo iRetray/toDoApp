@@ -10,11 +10,14 @@ export default class NavBar extends React.Component {
         return(
             <div className="navMargin">
                 <nav className="navbar navbar-expand navbar-dark fixed-top bg-dark">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
                     <Link className="navbar-brand" to="/home">
                         <img src={iconNav} width="40" height="40" alt="" className="icon"/>
                         toDo
                     </Link>                
-                    <div className=" navbar-collapse" id="navbarCollapse">
+                    <div className="collapse navbar-collapse" id="navbarCollapse">
                         <ul className="navbar-nav mr-auto">
                             <li className="nav-item">   
                                 <Link className="nav-link" to="/home/tasks"><FontAwesomeIcon icon={ faAddressBook } /> Mis tareas</Link>
@@ -28,7 +31,7 @@ export default class NavBar extends React.Component {
                         </ul>
                     </div>            
                 </nav>
-            </div>
+            </div> 
         )
     }
 }

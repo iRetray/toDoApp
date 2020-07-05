@@ -5,13 +5,14 @@ import { Jumbotron, Button } from 'reactstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlayCircle } from '@fortawesome/free-solid-svg-icons'
 import { Link }  from 'react-router-dom'
+import NavBarCollapse from './NavBarCollapse'
 
 export default class Home extends React.Component {
 
     render() {
         return(
             <div>
-                <NavBar />
+                <NavBarCollapse />
                 <div className="container">
                     <div className="row align-items-center">
                         <div className="col-sm-6">
