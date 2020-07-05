@@ -83,7 +83,7 @@ export default class Tasks extends React.Component {
                                         <p className="lead text-muted">Crea una tarea para empezar</p>
                                     </Jumbotron>
                                 </center>
-                            </div>
+                            </div>  
                             : <div></div>
                         }                                       
                     </div>

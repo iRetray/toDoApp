@@ -1,7 +1,10 @@
 import React from 'react'
-import { Form, FormGroup, Label, Input, Button } from 'reactstrap'
+import { Form, FormGroup, Label, Input, Button  } from 'reactstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlusSquare, faSpellCheck, faKeyboard } from '@fortawesome/free-solid-svg-icons'
+import { faPlusSquare, faSpellCheck, faKeyboard, faCalendarPlus } from '@fortawesome/free-solid-svg-icons'
+import Swal from 'sweetalert2'
+import '@sweetalert2/themes/dark/dark.css'
+
 
 export default class FormNewTask extends React.Component{
 
@@ -13,6 +16,7 @@ export default class FormNewTask extends React.Component{
         }
         this.tittleChange = this.tittleChange.bind(this);
         this.descriptionChange = this.descriptionChange.bind(this);
+        this.darAlerta = this.darAlerta.bind(this)
     }
 
     onFormSubmit = (e) => {
@@ -32,6 +36,21 @@ export default class FormNewTask extends React.Component{
         dataList.push(newTask)
         console.log(dataList)
         localStorage.setItem("listaTareas", JSON.stringify(dataList))
+        this.setState({
+            tittle: "",
+            description: ""
+        })
+        this.darAlerta()
+    }
+
+    darAlerta() {
+        Swal.fire({
+            icon: 'success',
+            title: 'Tarea Añadida',
+            text: 'Ahora tu nueva tarea estará disponible en tu lista personal',
+            confirmButtonText:'Genial',
+            showCloseButton: true
+          })
     }
 
     tittleChange(event) {
