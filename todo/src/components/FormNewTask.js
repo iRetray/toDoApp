@@ -21,7 +21,7 @@ export default class FormNewTask extends React.Component{
     }
 
     añadirTarea(tittle, description) {
-        let dataList = localStorage.getItem("listaTareas")
+        const dataList = JSON.parse(localStorage.getItem("listaTareas"))
         console.log(dataList)
         const newTask = {
             id: dataList.length,
@@ -29,11 +29,9 @@ export default class FormNewTask extends React.Component{
             description: description,
             state: 'pendiente'
         }
-        /*
-        let newListTask = JSON.stringify(dataList.push(newTask))
-        localStorage.setItem("listaTareas", newListTask)
-        console.log("Tarea insertada")
-        console.log(JSON.parse(localStorage.getItem("listaTareas"))) */
+        dataList.push(newTask)
+        console.log(dataList)
+        localStorage.setItem("listaTareas", JSON.stringify(dataList))
     }
 
     tittleChange(event) {
