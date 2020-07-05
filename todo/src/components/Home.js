@@ -18,7 +18,7 @@ export default class Home extends React.Component {
                             <Jumbotron>
                             <center>
                                 <h2>Guarda tus tareas facilmente</h2>
-                                <p className="lead">Crea notas para no olvidar nunca lo que tienes pendiente por hacer</p>
+                                <p className="lead">Crea notas <i>interactivas y dinámicas</i> para no olvidar nunca lo que tienes pendiente por hacer</p>
                                 <Link to="/home/tasks">
                                 <Button color="warning" block><FontAwesomeIcon icon={faPlayCircle}></FontAwesomeIcon> <strong> Empezar</strong></Button>
                                 </Link>
