@@ -11,10 +11,10 @@ export default class DevInfo extends React.Component {
                 <NavBarCollapse />
                 <div className="container">
                     <div className="row">
-                        <div className="col-3">
+                        <div className="col-sm-3">
                             <img src={nick} alt="" className="img-fluid"/>
                         </div>
-                        <div className="col-9">
+                        <div className="col-sm-9">
                             <p className="display-4">Retray</p>                            
                             <p className="lead">Desarrollador Web</p>
                             <hr></hr>
