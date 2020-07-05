@@ -1,5 +1,4 @@
 import React from 'react'
-import NavBar from './NavBar'
 import notes from '../img/note.png'
 import { Jumbotron, Button } from 'reactstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
