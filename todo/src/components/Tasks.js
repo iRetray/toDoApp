@@ -5,9 +5,15 @@ import AddButton from './AddButton'
 
 export default class Tasks extends React.Component {
 
-    state = {
-        dataList: []
-    }
+    constructor() {
+        super()
+        this.state = {
+            dataList: []
+        }
+        this.verificarCache = this.verificarCache.bind(this)
+        this.obtenerDatos = this.obtenerDatos.bind(this)
+        this.añadirTarea = this.añadirTarea.bind(this)
+    }    
 
     componentDidMount() {
         this.verificarCache()
@@ -18,13 +24,13 @@ export default class Tasks extends React.Component {
         if (!localStorage.getItem("listaTareas")) {
             const tareasDefault = [
                 {
-                    id: '0',
+                    id: 0,
                     tittle: 'Leer un libro',
                     description: 'Leer no es cómodo cuando se lee para hacernos preguntas, no para responderlas. Las lecturas más provechosas son aquellas que nos estremecen, inquietan y dan la vuelta a las ideas o creencias que más arraigadas están en nuestro ser.',
                     state: 'pendiente'
                 },
                 {
-                    id: '1',
+                    id: 1,
                     tittle: 'Hacer ejercicio',
                     description: 'El ejercicio físico hace que el cuerpo genere sustancias químicas que pueden ayudar a una persona a sentirse bien. El ejercicio físico puede ayudar a las personas a dormir mejor.',
                     state: 'pendiente'
@@ -54,10 +60,6 @@ export default class Tasks extends React.Component {
         this.obtenerDatos()
     }
 
-    eliminarTarea(id) {
-
-    }
-
     render() {
         return(
             <div>
@@ -67,7 +69,7 @@ export default class Tasks extends React.Component {
                         {this.state.dataList.map(e =>
                             <div className="col-lg-4 align-self-center" key={e.id}>
                                 <center>
-                                <Task tittle={e.tittle} description={e.description} done={e.state} />
+                                <Task tittle={e.tittle} description={e.description} done={e.state} id={e.id} updateState={this.obtenerDatos}/>
                                 </center>
                             </div>
                         )}                                        
