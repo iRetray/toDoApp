@@ -70,12 +70,12 @@ export default class FormNewTask extends React.Component{
 
     tittleChange(event) {     
         this.setState({tittle: event.target.value});
-        this.props.actualizarTittle(this.state.tittle);      
+        this.props.actualizarTittle(event.target.value);      
     }
 
     descriptionChange(event) {
         this.setState({description: event.target.value});
-        this.props.actualizarDescription(this.state.description)
+        this.props.actualizarDescription(event.target.value)
     }
 
     render() {
