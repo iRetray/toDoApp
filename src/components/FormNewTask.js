@@ -22,7 +22,7 @@ export default class FormNewTask extends React.Component{
 
     onFormSubmit = (e) => {
         e.preventDefault()
-        if(!this.state.tittle | !this.state.tittle){
+        if(!this.state.tittle.length || !this.state.description.length){
             this.camposVacios()
         } else {
             this.añadirTarea(this.state.tittle, this.state.description)
